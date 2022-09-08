@@ -5,7 +5,10 @@
 *Para ter mais dinamismo toda vez que abre o app ele gera um int aleatório de 0 a 10000 e chama a API usando esse int como id do filme, 
 pode acontecer que ao iniciar ser apresentado um dialog dizendo que um erro aconteceu, esse erro é que a API 
 não teve sucesso na resposta(na maioria dos casos por não encontrar um filme com aquele id) e quando clicar em tentar novamente ele tentara de novo com outro número aleatório.
+
 *Todos os filmes recomendados são clicaveis.
+
+*Foi testado em smartphones android
 
 #OBJETIVO
 
