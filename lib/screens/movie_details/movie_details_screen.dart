@@ -86,17 +86,14 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter)),
       ),
-      Padding(
-        padding: EdgeInsets.only(top: height * .1),
-        child: Container(
-          height: height * .4,
-          width: MediaQuery.of(context).size.width,
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Colors.black, Colors.transparent],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment(0, .3))),
-        ),
+      Container(
+        height: height * .5,
+        width: MediaQuery.of(context).size.width,
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.black, Colors.transparent],
+                begin: Alignment.bottomCenter,
+                end: Alignment(0, .3))),
       )
     ]);
   }
