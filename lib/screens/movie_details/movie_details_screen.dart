@@ -19,7 +19,6 @@ class MovieDetailsScreen extends StatefulWidget {
 
 class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
   final _controller = MovieDetailsController();
-  bool _isFavorite = false;
 
   @override
   void initState() {
@@ -118,32 +117,25 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> {
                     overflow: TextOverflow.ellipsis)),
             Expanded(
                 flex: 2,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _isFavorite = !_isFavorite;
-                    });
-                  },
-                  child: Container(
-                    width: 50,
-                    alignment: Alignment.centerRight,
-                    padding: const EdgeInsets.only(top: 4),
-                    child: LikeButton(
-                      circleColor: const CircleColor(
-                          start: Color(0xff00ddff), end: Color(0xff0099cc)),
-                      bubblesColor: const BubblesColor(
-                        dotPrimaryColor: Color(0xff33b5e5),
-                        dotSecondaryColor: Color(0xff0099cc),
-                      ),
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      likeBuilder: (bool isLiked) {
-                        return Icon(
-                          Icons.favorite,
-                          size: 24,
-                          color: isLiked ? ColorsUtil.red : ColorsUtil.white,
-                        );
-                      },
+                child: Container(
+                  width: 50,
+                  alignment: Alignment.centerRight,
+                  padding: const EdgeInsets.only(top: 4),
+                  child: LikeButton(
+                    circleColor: const CircleColor(
+                        start: Color(0xff00ddff), end: Color(0xff0099cc)),
+                    bubblesColor: const BubblesColor(
+                      dotPrimaryColor: Color(0xff33b5e5),
+                      dotSecondaryColor: Color(0xff0099cc),
                     ),
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    likeBuilder: (bool isLiked) {
+                      return Icon(
+                        Icons.favorite,
+                        size: 24,
+                        color: isLiked ? ColorsUtil.red : ColorsUtil.white,
+                      );
+                    },
                   ),
                 ))
           ],

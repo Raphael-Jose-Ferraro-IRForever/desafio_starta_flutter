@@ -48,8 +48,7 @@ class MoviesRecommendationWidget extends StatelessWidget {
                       children: <TextSpan>[
                         TextSpan(
                             text: _listOfGenres(),
-                            style:
-                                const TextStyle(fontWeight: FontWeight.w400)),
+                            style: const TextStyle(fontWeight: FontWeight.w400)),
                       ],
                     ),
                   )
@@ -57,8 +56,12 @@ class MoviesRecommendationWidget extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Icon(FontAwesomeIcons.solidCircleCheck,
-                  color: ColorsUtil.white, size: 12),
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Icon(FontAwesomeIcons.solidCircleCheck,
+                    color: ColorsUtil.white, size: 12),
+              ),
             ),
           ],
         ),
