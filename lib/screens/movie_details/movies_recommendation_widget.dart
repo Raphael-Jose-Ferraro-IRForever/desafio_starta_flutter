@@ -22,49 +22,49 @@ class MoviesRecommendationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: GestureDetector(
+      child: InkWell(
         onTap: () => callback(itemMovie.id),
         child: Row(
-          children: [
-            Expanded(
-              flex: 2,
-              child: ImageCustomWidget(urlImage: itemMovie.urlImage),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              flex: 11,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(itemMovie.title,
-                      style: Theme.of(context).textTheme.titleMedium),
-                  RichText(
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    text: TextSpan(
-                      text: itemMovie.year.toString(),
-                      style: const TextStyle(fontWeight: FontWeight.w700),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: _listOfGenres(),
-                            style: const TextStyle(fontWeight: FontWeight.w400)),
-                      ],
-                    ),
-                  )
-                ],
+            children: [
+              Expanded(
+                flex: 2,
+                child: ImageCustomWidget(urlImage: itemMovie.urlImage),
               ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 8),
-                child: Icon(FontAwesomeIcons.solidCircleCheck,
-                    color: ColorsUtil.white, size: 12),
+              const SizedBox(width: 16),
+              Expanded(
+                flex: 11,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(itemMovie.title,
+                        style: Theme.of(context).textTheme.titleMedium),
+                    RichText(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                        text: itemMovie.year.toString(),
+                        style: const TextStyle(fontWeight: FontWeight.w700),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: _listOfGenres(),
+                              style: const TextStyle(fontWeight: FontWeight.w400)),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
+              Expanded(
+                flex: 1,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: Icon(FontAwesomeIcons.solidCircleCheck,
+                      color: ColorsUtil.white, size: 12),
+                ),
+              ),
+            ],
+          ),
       ),
     );
   }
